@@ -12,7 +12,7 @@ Conecta à conta IQ Option.
 {
     "email": "seu_email",
     "password": "sua_senha",
-    "balance_mode": "PRACTICE"  // Pode ser "PRACTICE" ou "REAL"
+    "balance_mode": "PRACTICE"
 }
 ```
 
@@ -38,7 +38,7 @@ Executa uma operação na IQ Option.
     "amount": 1,
     "direction": "call",
     "duration": 1,
-    "balance_mode": "PRACTICE"  // Pode ser "PRACTICE" ou "REAL"
+    "balance_mode": "PRACTICE"
 }
 ```
 
@@ -50,6 +50,12 @@ Executa uma operação na IQ Option.
     "balance_mode": "PRACTICE"
 }
 ```
+
+### Parâmetros
+
+- `balance_mode`: Especifica o modo de conta. Valores possíveis:
+  - `PRACTICE`: Conta de demonstração (padrão)
+  - `REAL`: Conta real
 
 ## Instalação
 
