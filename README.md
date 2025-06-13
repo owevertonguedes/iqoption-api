@@ -11,7 +11,8 @@ Conecta à conta IQ Option.
 ```json
 {
     "email": "seu_email",
-    "password": "sua_senha"
+    "password": "sua_senha",
+    "balance_mode": "PRACTICE"  // Pode ser "PRACTICE" ou "REAL"
 }
 ```
 
@@ -20,7 +21,8 @@ Conecta à conta IQ Option.
 {
     "status": "success",
     "connected": true,
-    "balance": 1000.00
+    "balance": 1000.00,
+    "balance_mode": "PRACTICE"
 }
 ```
 
@@ -35,7 +37,8 @@ Executa uma operação na IQ Option.
     "asset": "EURUSD",
     "amount": 1,
     "direction": "call",
-    "duration": 1
+    "duration": 1,
+    "balance_mode": "PRACTICE"  // Pode ser "PRACTICE" ou "REAL"
 }
 ```
 
@@ -43,7 +46,8 @@ Executa uma operação na IQ Option.
 ```json
 {
     "status": "success",
-    "order_id": "123456"
+    "order_id": "123456",
+    "balance_mode": "PRACTICE"
 }
 ```
 
@@ -69,7 +73,9 @@ docker run -p 5000:5000 iqoption-api
 
 ## Notas
 
-- A API usa conta de demonstração (PRACTICE)
+- O parâmetro `balance_mode` é opcional e pode ser "PRACTICE" ou "REAL"
+- Se não especificado, o padrão é "PRACTICE"
 - Por padrão, opera com EURUSD
 - Duração padrão é 1 minuto
-- Valores padrão: amount=1, direction=call 
+- Valores padrão: amount=1, direction=call
+- A API retorna logs detalhados em caso de erro, incluindo o modo de conta usado
